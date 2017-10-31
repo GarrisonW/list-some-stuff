@@ -2,23 +2,61 @@ import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: false,
+      data: [],
+      error: null,
+      refreshing: false,
+    };
+  }
+
+  componentDidMount() {
+    this.makeRemoteRequest();
+  }
+
+  //
+  //  The folowing fetch code was havested from
+  //  https://medium.com/react-native-development/how-to-use-the-flatlist-component-react-native-basics-92c482816fe6
+  //  written by Spencer Carli
+  //
+
+  makeRemoteRequest = () => {
+    this.setState({ loading: true });
+    return fetch('https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json')
+        .then(response => response.json())
+        .then((responseData) => {
+          this.setState({
+            data: responseData.movies,
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  };
+
   render() {
     return (
       <View>
-      <AppBar/>
-      <FlatList
-        data={[{key: 'a', name: 'Fred'},
-               {key: 'b', name: 'Scooby'},
-               {key: 'c', name: 'Daphnie'},
-               {key: 'd', name: 'Shaggy'},
-               {key: 'e', name: 'Ghost'},
-               {key: 'f', name: 'Velma'}]
-             }
-        renderItem={({item}) => <View style={{height: 100}}>
-                                    <Text style={styles.bigblue}>{item.name}</Text>
-                                </View>}
-      />
-    </View>
+        <AppBar/>
+        <FlatList
+          data={this.state.data}
+          renderItem={({item}) => <View style={{height: 100}}>
+                                      <Text style={styles.bigblue}>{item.title}</Text>
+                                  </View>}
+            /*
+            <ListItem
+              roundAvatar
+              title={item.name.last}
+              subtitle={item.email}
+              avatar={{ uri: item.picture.thumbnail }}
+            />
+            */
+        />
+      </View>
     );
   }
 }
