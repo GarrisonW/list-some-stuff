@@ -5,7 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-      <Text>Add navbar at some point</Text>
+      <AppBar/>
       <FlatList
         data={[{key: 'a', name: 'Fred'},
                {key: 'b', name: 'Scooby'},
@@ -26,8 +26,9 @@ export default class App extends React.Component {
 class AppBar extends React.Component {
   render() {
     return (
-      <View>
-        {/* TODO */}
+      <View style={{flexDirection: 'row'}}>
+        <Text>home</Text>
+        <Text style={styles.appbar}>THIS IS THE APP BAR</Text>
       </View>
     );
   }
@@ -39,6 +40,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
     backgroundColor: 'red'
+  },
+  appbar: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 30,
+    backgroundColor: 'blue'
   },
   redText: {
     color: 'red',
