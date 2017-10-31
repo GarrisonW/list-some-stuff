@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
     return (
+      <View>
+      <Text>Add navbar at some point</Text>
       <FlatList
         data={[{key: 'a', name: 'Fred'},
                {key: 'b', name: 'Scooby'},
@@ -13,10 +15,20 @@ export default class App extends React.Component {
                {key: 'f', name: 'Velma'}]
              }
         renderItem={({item}) => <View style={{height: 100}}>
-                                    <Text style={styles.red}>{item.key}</Text>
                                     <Text style={styles.bigblue}>{item.name}</Text>
                                 </View>}
       />
+    </View>
+    );
+  }
+}
+
+class AppBar extends React.Component {
+  render() {
+    return (
+      <View>
+        {/* TODO */}
+      </View>
     );
   }
 }
