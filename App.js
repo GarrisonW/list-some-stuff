@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -18,12 +18,6 @@ export default class App extends React.Component {
     this.makeRemoteRequest();
   }
 
-  //
-  //  The folowing fetch code was havested from
-  //  https://medium.com/react-native-development/how-to-use-the-flatlist-component-react-native-basics-92c482816fe6
-  //  written by Spencer Carli
-  //
-
   makeRemoteRequest = () => {
     this.setState({ loading: true });
     return fetch('https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json')
@@ -41,20 +35,21 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-        <AppBar/>
         <FlatList
           data={this.state.data}
-          renderItem={({item}) => <View style={{height: 100}}>
-                                      <Text style={styles.bigblue}>{item.title}</Text>
+          renderItem={({item}) => <View style={{flexDirection: 'row', height: 100}}>
+                                      <Image
+                                        source={{uri: item.posters.thumbnail}}
+                                        style={styles.thumbnail}/>
+                                      <View style={styles.content}>
+                                        <View style={{flexDirection: 'row'}}>
+                                          <Text style={styles.titleText}>{item.title}</Text>
+                                          <Text style={styles.yearText}>({item.year})</Text>
+                                        </View>
+                                        <Text style={styles.medText}>Critics : {item.ratings.critics_rating}</Text>
+                                        <Text style={styles.medText}>Audience: {item.ratings.audience_rating}</Text>
+                                      </View>
                                   </View>}
-            /*
-            <ListItem
-              roundAvatar
-              title={item.name.last}
-              subtitle={item.email}
-              avatar={{ uri: item.picture.thumbnail }}
-            />
-            */
         />
       </View>
     );
@@ -64,28 +59,45 @@ export default class App extends React.Component {
 class AppBar extends React.Component {
   render() {
     return (
-      <View style={{flexDirection: 'row'}}>
-        <Text>home</Text>
-        <Text style={styles.appbar}>THIS IS THE APP BAR</Text>
+      <View style={styles.appbar}>
+        <Text>THIS IS THE APP BAR</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  bigblue: {
-    color: 'blue',
+  titleText: {
     fontWeight: 'bold',
-    fontSize: 30,
-    backgroundColor: 'red'
+    fontSize: 16,
   },
   appbar: {
+    flexDirection: 'row',
+    alignItems: 'center',
     color: 'white',
     fontWeight: 'bold',
     fontSize: 30,
-    backgroundColor: 'blue'
+    backgroundColor: 'teal',
+    height: 44
   },
-  redText: {
-    color: 'red',
+  medText: {
+    marginLeft: 8,
+    color: 'blue',
   },
+  yearText: {
+    color: 'blue',
+    fontSize: 8,
+    marginTop: 8,
+    marginLeft: 8,
+  },
+  thumbnail: {
+    marginTop: 8,
+    marginLeft: 8,
+    marginRight: 16,
+    width: 53,
+    height: 81,
+  },
+  content: {
+    flexDirection: 'column'
+  }
 });
