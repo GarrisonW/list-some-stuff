@@ -1,3 +1,19 @@
-{"results":[
-{"gender":"female","name":{"title":"mrs","first":"ida","last":"nielsen"},"location":{"street":"1739 kærbyvej","city":"aarhus","state":"sjælland","postcode":26029},"email":"ida.nielsen@example.com","login":{"username":"lazysnake679","password":"tttttt","salt":"6mkVdfdn","md5":"d091bb68da6e82784e2594ac5d188237","sha1":"d09189e89cb05cb139cd3bc21e8bff5cef81cb7d","sha256":"f1760231f22839fb24b7b3377655f6beeed649a6b12c6cc9f991cc666b9d479c"},"dob":"1952-11-02 22:53:01","registered":"2008-08-23 22:28:56","phone":"88246680","cell":"20288662","id":{"name":"CPR","value":"127575-0058"},"picture":{"large":"https://randomuser.me/api/portraits/women/54.jpg","medium":"https://randomuser.me/api/portraits/med/women/54.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/54.jpg"},"nat":"DK"},
-{"gender":"male","name":{"title":"mr","first":"gerald","last":"ramirez"},"location":{"street":"1864 w dallas st","city":"columbus","state":"rhode island","postcode":18263},"email":"gerald.ramirez@example.com","login":{"username":"lazygorilla628","password":"friendly","salt":"7ny9OcHG","md5":"f49ee0ecdb851eb5fb5b99057bb8a1d7","sha1":"efe82da5a7c6c8cda28b583dc2d7f8097c29a301","sha256":"a3d847d93643f8bfa6a231732f39caaa09a82115544f1ac4eaa3f4eef674b350"},"dob":"1993-03-20 13:28:17","registered":"2009-05-01 17:34:11","phone":"(295)-047-9250","cell":"(931)-994-1864","id":{"name":"SSN","value":"563-51-1058"},"picture":{"large":"https://randomuser.me/api/portraits/men/49.jpg","medium":"https://randomuser.me/api/portraits/med/men/49.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/49.jpg"},"nat":"US"},
+{"id":"770819043",
+"title":"Reaction",
+"year":"",
+"mpaa_rating":"Unrated",
+"runtime":13,
+"release_dates":{},
+"ratings":{"critics_score":-1,"audience_score":100},
+"synopsis":"",
+"posters":{"thumbnail":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif",
+"profile":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif",
+"detailed":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif",
+"original":"http://d3biamo577v4eu.cloudfront.net/static/images/redesign/poster_default_thumb.gif"},
+"abridged_cast":[],
+"links":{"self":"http://api.rottentomatoes.com/api/public/v1.0/movies/770819043.json",
+"alternate":"http://www.rottentomatoes.com/m/reaction/",
+"cast":"http://api.rottentomatoes.com/api/public/v1.0/movies/770819043/cast.json",
+"reviews":"http://api.rottentomatoes.com/api/public/v1.0/movies/770819043/reviews.json",
+"similar":"http://api.rottentomatoes.com/api/public/v1.0/movies/770819043/similar.json"}
+}
