@@ -37,6 +37,7 @@ export default class App extends React.Component {
       <View>
         <FlatList
           data={this.state.data}
+          keyExtractor={item => item.id}
           renderItem={({item}) => <View style={{flexDirection: 'row', height: 100}}>
                                       <Image
                                         source={{uri: item.posters.thumbnail}}
@@ -94,8 +95,8 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginLeft: 8,
     marginRight: 16,
-    width: 53,
-    height: 81,
+    width: 50,
+    height: 80,
   },
   content: {
     flexDirection: 'column'
